@@ -1,3 +1,5 @@
+# Danh Mục
+- [Danh Mục](#danh-mục)
 - [Buổi 3 - Cách Java lưu trữ dữ liệu](#buổi-3---cách-java-lưu-trữ-dữ-liệu)
   - [Cách Java lưu trữ dữ liệu](#cách-java-lưu-trữ-dữ-liệu)
     - [1. Kiểu dữ liệu nguyên thủy.](#1-kiểu-dữ-liệu-nguyên-thủy)
