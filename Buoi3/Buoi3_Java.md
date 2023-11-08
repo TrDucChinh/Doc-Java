@@ -94,11 +94,17 @@
 - Trong ví trên sẽ thực hiện như sau:
 
     - Khởi tạo thuộc tính a = 3 khi này hệ thống sẽ cấp phát 1 địa chỉ ô nhớ để lưu trữ giá trị của a và địa chỉ này sẽ có giá trị là 3 
+    
     ![Alt text](image-3.png)
+
     - Dòng thứ 2 thực hiện phép gán b = a lúc này sẽ khởi tạo ra thuộc tính b và cũng có giá trị là 3 tuy nhiên địa chỉ của a và b là khác nhau 
+    
     ![Alt text](image-4.png)
+
     - Dòng lệnh thứ 3 sẽ thực hiện tăng b lên 1 đơn vị. Vì a và b đăng ở 2 địa chỉ ô nhớ khác nhau nên giá trị của b thay đổi thì giá trị của a vẫn không bị ảnh hưởng 
+    
     ![Alt text](image-5.png)
+
     >**Bản chất của tính tham trị là nó chỉ copy giá trị của 1 địa chỉ khác để tạo ra 1 địa chỉ ô nhớ mới có cùng giá trị với địa chỉ vừa copy.**
 - Kiểu dữ liệu đối tượng là kiểu dữ liệu có tính tham chiếu:
 
