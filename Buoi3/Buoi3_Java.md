@@ -42,7 +42,7 @@
     - `stack frame` là nơi lưu chữ toàn bộ biến của một phương thức (method), mỗi phương thức được thực thi sẽ sẽ tạo ra một `stack frame`.
     >Ví dụ ta có 3 method **methodA(), methodB() và main:**
     ```Java
-        public static void methodA() {
+    public static void methodA() {
         int a = 10;
         System.out.println(a);
     }
