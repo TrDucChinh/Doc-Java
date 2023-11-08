@@ -32,7 +32,8 @@
 # Buổi 3 - Cách Java lưu trữ dữ liệu
 ## Cách Java lưu trữ dữ liệu
 - Khi một chương trình Java được thực thi, nó sẽ yêu cầu hệ điều hành cấp phát một không gian trên bộ nhớ để lưu trữ toàn bộ giữ liệu và thông tin của nó.
-- Sau đó, nó sẽ chia vùng không gian đó thành 4 vùng nhớ (**memory segment**): ![Alt text](image.png)
+- Sau đó, nó sẽ chia vùng không gian đó thành 4 vùng nhớ (**memory segment**): 
+![Alt text](image.png)
 - **Vùng nhớ code (code segment):** theo như tên gọi của nó, tất cả mã chương trình được lưu ở đây khi chương trình được thực thi.
 - **Vùng nhớ data (data segment):** đây là nơi lưu trữ những dữ liệu chung của chương trình như các biến `static`, `constant`,... những biến dữ liệu mà được sinh ra khi chương trình bắt đầu thực thi và chỉ giải phóng khi chương trình kết thúc.
 - **Vùng nhớ stack (stack segment):** đây sẽ là nơi lưu trữ các biến dữ liệu `nguyên thủy (byte, char, short, int, long, float, double và boolean)` và địa chỉ của ô nhớ `memory address`.
@@ -57,7 +58,8 @@
         methodB();
     }
     ``` 
-    - Khi chương trình được thực thi, nó sẽ tạo ra 3 SF và push vào vùng nhớ stack theo thứ tự nó được gọi: `main, methodB, methodA` ![Alt text](image-1.png)
+    - Khi chương trình được thực thi, nó sẽ tạo ra 3 SF và push vào vùng nhớ stack theo thứ tự nó được gọi: `main, methodB, methodA` 
+    ![Alt text](image-1.png)
     - Với phương thức `main()` ta có biến c = 30 nên giá trị 30 này sẽ được lưu trữ ở SF main, và biến c này cũng sẽ có phạm vi sử dụng trong phương thức `main()` mà thôi.
 
     - Tương tự với các phương thức `methodB()` và `methodA()`, ta  cũng sẽ có các biến b và a tương ứng. Biến b sẽ được lưu trữ ở SF methodB và chỉ có phạm vi sử dụng ở đó, tương tự cho biến a cũng sẽ được lưu trữ ở SF methodA và chỉ có phạm vi sử dụng ở đây thôi nhé.
@@ -70,7 +72,8 @@
 > - Ngoài ra, trong bộ nhớ máy tính, mỗi ô nhớ sẽ được đánh địa chỉ để xác định vị trí của nó trong bộ nhớ. Vì vậy trong mỗi ô nhớ sẽ bao gồm 2 thành phần **Value** và **Address**.
 ### 1. Kiểu dữ liệu nguyên thủy.
 - Là kiểu dữ liệu được cung cấp sẵn trong các ngôn ngữ lập trình, nó được dùng để lưu trữ các giá trị đơn giản.
-- Kiểu dữ liệu nguyên thủy được lưu vào `vùng nhớ stack.`![Alt text](image-2.png)
+- Kiểu dữ liệu nguyên thủy được lưu vào `vùng nhớ stack.`
+![Alt text](image-2.png)
 ### 2. Kiểu dữ liệu đối tượng (Object).
 ![Alt text](image-7.png)
 - Kiểu dữ liệu đối tượng được lưu vào vào `vùng nhớ heap.`
@@ -90,9 +93,12 @@
 ```
 - Trong ví trên sẽ thực hiện như sau:
 
-    - Khởi tạo thuộc tính a = 3 khi này hệ thống sẽ cấp phát 1 địa chỉ ô nhớ để lưu trữ giá trị của a và địa chỉ này sẽ có giá trị là 3 ![Alt text](image-3.png)
-    - Dòng thứ 2 thực hiện phép gán b = a lúc này sẽ khởi tạo ra thuộc tính b và cũng có giá trị là 3 tuy nhiên địa chỉ của a và b là khác nhau ![Alt text](image-4.png)
-    - Dòng lệnh thứ 3 sẽ thực hiện tăng b lên 1 đơn vị. Vì a và b đăng ở 2 địa chỉ ô nhớ khác nhau nên giá trị của b thay đổi thì giá trị của a vẫn không bị ảnh hưởng ![Alt text](image-5.png)
+    - Khởi tạo thuộc tính a = 3 khi này hệ thống sẽ cấp phát 1 địa chỉ ô nhớ để lưu trữ giá trị của a và địa chỉ này sẽ có giá trị là 3 
+    ![Alt text](image-3.png)
+    - Dòng thứ 2 thực hiện phép gán b = a lúc này sẽ khởi tạo ra thuộc tính b và cũng có giá trị là 3 tuy nhiên địa chỉ của a và b là khác nhau 
+    ![Alt text](image-4.png)
+    - Dòng lệnh thứ 3 sẽ thực hiện tăng b lên 1 đơn vị. Vì a và b đăng ở 2 địa chỉ ô nhớ khác nhau nên giá trị của b thay đổi thì giá trị của a vẫn không bị ảnh hưởng 
+    ![Alt text](image-5.png)
     >**Bản chất của tính tham trị là nó chỉ copy giá trị của 1 địa chỉ khác để tạo ra 1 địa chỉ ô nhớ mới có cùng giá trị với địa chỉ vừa copy.**
 - Kiểu dữ liệu đối tượng là kiểu dữ liệu có tính tham chiếu:
 
@@ -129,7 +135,8 @@
    >Student 1: Nguyen Van B
     Student 2: Nguyen Van B
 
-- Nhìn vào `Student sv2 = sv1;` khi này chúng ta cũng tạo ra 1 thuộc tính đối tượng kiểu sv2 tuy nhiên hệ thống sẽ không cấp phát 1 địa chỉ mới để lưu trữ sv2 mà sẽ đưa sv2 trỏ đến địa chỉ của sv1. Tức là sv1 và sv2 sẽ trỏ tới cùng 1 địa chỉ ô nhớ ![Alt text](image-6.png) 
+- Nhìn vào `Student sv2 = sv1;` khi này chúng ta cũng tạo ra 1 thuộc tính đối tượng kiểu sv2 tuy nhiên hệ thống sẽ không cấp phát 1 địa chỉ mới để lưu trữ sv2 mà sẽ đưa sv2 trỏ đến địa chỉ của sv1. Tức là sv1 và sv2 sẽ trỏ tới cùng 1 địa chỉ ô nhớ 
+![Alt text](image-6.png) 
 - Khi thực hiện `sv2.setName("Nguyen Van B");` sẽ làm giá trị tại địa chỉ ô nhớ thay đổi và tất nhiên sẽ thay đổi cả sv1 và sv2 vì nó cùng trỏ vào 1 địa chỉ ô nhớ.
 ### 3. Class Object
 - Là tổ tiên của mọi lớp trong ngôn ngữ lập trình Java.
@@ -137,6 +144,7 @@
 - Bạn có thể sử dụng biến của lớp Object để tham chiếu đến mọi đối tượng trong Java.
 - Trừ các kiểu dữ liệu nguyên thủy, còn lại đều là đối tượng.
 >**Để hiểu rõ hơn: [Lớp Object](https://www.youtube.com/watch?v=RbxW4OOVdCE)**
+
 >**Tham khảo: [Lớp Object](https://yellowcodebooks.com/2017/08/02/java-bai-24-lop-object/)**
 ### 4. Lớp Wrapper, Boxing, Unboxing.
 - Tham khảo: [Lớp Wrapper](https://yellowcodebooks.com/2018/01/19/java-bai-36-lop-wrapper/#Lam_Quen_Voi_Lop_Wrapper)
@@ -633,6 +641,7 @@
 >**Trong trường hợp không có phương thức ở class con giống class cha thì không cần phải sử dụng `super`**
 ## Garbage Collector trong Java.
 >**Tham khảo: [Garbage Collector - codelearn](https://codelearn.io/sharing/garbage-collectors-trong-java)**
+
 >**Tham khảo: [Garbage Collector](https://viettuts.vn/java-thread/garbage-collection-trong-java)**
 
 - Trong Java, `rác (garbage)` có nghĩa là một đối đối tượng không được tham chiếu đến nữa và bộ thu gom rác `(Garbage collector)` có nhiệm vụ hủy các đối tượng đó để giải phóng bộ nhớ.   
@@ -643,9 +652,12 @@
 - `Garbage collector` là chương trình chạy nền, nó theo dõi toàn bộ các `Object` trong bộ nhớ `(Heap)` và tìm ra những `Object` nào không được dùng nữa `(không có Object nào reference đến nó)`. Toàn bộ những Object không có reference sẽ bị xóa.
 - Quá trình thu gôm rác cơ bản thông qua 3 bước:
 
-  - **Marking:** là bước đánh dấu những `Object` còn sử dụng và những `Object` không còn sử dụng.![Alt text](image-8.png)   
-  - **Normal deleting:** trình `Garbage Collector` sẽ xóa những `Object` không còn sử dụng.![Alt text](image-9.png)
-  - **Deletion with Compacting:** Sau khi những `Object` không còn được sử dụng bị xóa, những `Object` còn được sử dụng sẽ được `"gom"` lại gần nhau. Điều đó làm tăng hiệu xuất sử dụng bộ nhớ trống để cấp phát cho những `Object` mới.![Alt text](image-10.png)
+  - **Marking:** là bước đánh dấu những `Object` còn sử dụng và những `Object` không còn sử dụng.
+  ![Alt text](image-8.png)   
+  - **Normal deleting:** trình `Garbage Collector` sẽ xóa những `Object` không còn sử dụng.
+  ![Alt text](image-9.png)
+  - **Deletion with Compacting:** Sau khi những `Object` không còn được sử dụng bị xóa, những `Object` còn được sử dụng sẽ được `"gom"` lại gần nhau. Điều đó làm tăng hiệu xuất sử dụng bộ nhớ trống để cấp phát cho những `Object` mới.
+  ![Alt text](image-10.png)
 
 - Ưu điểm:
 
