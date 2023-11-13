@@ -1,3 +1,22 @@
+- [Buổi 4 - Mọi thứ đều là hướng đối tượng](#buổi-4---mọi-thứ-đều-là-hướng-đối-tượng)
+  - [Tính đóng gói (Encapsulation)](#tính-đóng-gói-encapsulation)
+  - [Tính kế thừa (Inheritance)](#tính-kế-thừa-inheritance)
+    - [1. Các kiểu kế thừa trong Java](#1-các-kiểu-kế-thừa-trong-java)
+      - [1.1 Kế thừa đơn (Single Inheritance)](#11-kế-thừa-đơn-single-inheritance)
+      - [1.2 Thừa kế nhiều cấp (Multilevel Inheritance)](#12-thừa-kế-nhiều-cấp-multilevel-inheritance)
+      - [1.3 Thừa kế thứ bậc (Hierarchical Inheritance)](#13-thừa-kế-thứ-bậc-hierarchical-inheritance)
+      - [2. Tại sao sử dụng tính kế thừa trong Java](#2-tại-sao-sử-dụng-tính-kế-thừa-trong-java)
+      - [3. Tại sao đa kế thừa không được support trong java?](#3-tại-sao-đa-kế-thừa-không-được-support-trong-java)
+  - [Tính đa hình (Polymorphism)](#tính-đa-hình-polymorphism)
+    - [1. Đa hình lúc runtime trong java](#1-đa-hình-lúc-runtime-trong-java)
+      - [1.1 Upcasting là gì?](#11-upcasting-là-gì)
+      - [1.2 Ví dụ về đa hình tại runtime trong Java](#12-ví-dụ-về-đa-hình-tại-runtime-trong-java)
+    - [2. Đa hình tại runtime trong Java với thành viên dữ liệu](#2-đa-hình-tại-runtime-trong-java-với-thành-viên-dữ-liệu)
+    - [3. Đa hình lúc runtime trong Java với kế thừa nhiều tầng](#3-đa-hình-lúc-runtime-trong-java-với-kế-thừa-nhiều-tầng)
+    - [4. Nạp chồng phương thức (method overloading)](#4-nạp-chồng-phương-thức-method-overloading)
+    - [5. Ghi đè phương thức (method overriding)](#5-ghi-đè-phương-thức-method-overriding)
+    - [6. Sự khác nhau giữa overloading và overriding trong java](#6-sự-khác-nhau-giữa-overloading-và-overriding-trong-java)
+
 # Buổi 4 - Mọi thứ đều là hướng đối tượng
 ## Tính đóng gói (Encapsulation)
 >**Tham Khảo: [Tính đóng gói](https://gpcoder.com/2365-tinh-dong-goi-encapsulation-trong-java/)**
