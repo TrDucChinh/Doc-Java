@@ -419,11 +419,11 @@ class BabyDog1 extends Dog {
 
 >***Tại sao không ghi đè được phương thức static?*** 
 
-*Vì phương thức static được ràng buộc với class, còn phương thức instance được ràng buộc với đối tượng. Static thuộc về vùng nhớ class còn instance thuộc về vùng nhớ heap.*
+>*Vì phương thức static được ràng buộc với class, còn phương thức instance được ràng buộc với đối tượng. Static thuộc về vùng nhớ class còn instance thuộc về vùng nhớ heap.*
 
 >***Có ghi đè phương thức main được không?***
 
-*Không, vì main là phương thức static.*
+>*Không, vì main là phương thức static.*
 
 ### 6. Sự khác nhau giữa overloading và overriding trong java
 
