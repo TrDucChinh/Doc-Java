@@ -402,6 +402,7 @@ class BabyDog1 extends Dog {
     - Thay đổi số lượng các tham số
     - Thay đổi kiểu dữ liệu của các tham số
 > ***Tại sao không thể nạp chồng phương thức bằng cách chỉ thay đổi kiểu trả về của phương thức?***
+ 
 > *Trong java, không thể nạp chồng phương thức bằng cách chỉ thay đổi kiểu trả về của phương thức bởi vì không biết phương thức nào sẽ được gọi.*
 ### 5. Ghi đè phương thức (method overriding)
 - `Ghi đè phương thức` trong java xảy ra nếu lớp con có phương thức giống lớp cha.
@@ -413,12 +414,15 @@ class BabyDog1 extends Dog {
    - Lớp con và lớp cha có mối quan hệ kế thừa.
 
 > ***Có ghi đè được phương thức static không?***
+
 > *Không, phương thức static không thể ghi đè được, bởi vì ghi đè phương thức được thực thi lúc runtime (tính đa hình).*
 
 >***Tại sao không ghi đè được phương thức static?*** 
+
 *Vì phương thức static được ràng buộc với class, còn phương thức instance được ràng buộc với đối tượng. Static thuộc về vùng nhớ class còn instance thuộc về vùng nhớ heap.*
 
 >***Có ghi đè phương thức main được không?***
+
 *Không, vì main là phương thức static.*
 
 ### 6. Sự khác nhau giữa overloading và overriding trong java
