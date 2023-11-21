@@ -81,9 +81,11 @@ Là nơi lưu trữ tất cả những thông tin cần thiết để duy trì v
     - ***Branch remote:*** là branch lưu ở remote. Branch này có thể `fetch` về local nhưng không tạo thêm branch ở local. Hiểu đơn giản là bạn có thể tải branch ở remote về nhưng không tạo 1 branch ở local với tên tương tự và tất nhiên sẽ không liên kết nó với một branch local nào cả. Để hiển thị branch remote có trên local dùng lệnh `git branch -r`
 
 **Tạo branch**: `git branch <branchname>`
+
 **Xoá một branch ở phía local:** `git branch -D <branch_name>`
+
 **Xoá một branch ở phía remote:**`git push <remote_name> --delete <branch_name>`
-**Xoá một branch ở phía remote:**`git push <remote_name> --delete <branch_name>`
+
 **Chuyển nhánh:**`git checkout <branch>` hoặc `git checkout -b <branch name>`(Chuyển nhánh và tạo nhánh `branch name`)
 
 ### 2.3. Commit
