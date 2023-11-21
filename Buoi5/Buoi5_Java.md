@@ -1,3 +1,22 @@
+- [DEV THÌ KHÔNG CHỈ VIẾT CODE](#dev-thì-không-chỉ-viết-code)
+  - [1. Version Control là gì? Tại sao lại phải sử dụng Version Control](#1-version-control-là-gì-tại-sao-lại-phải-sử-dụng-version-control)
+  - [2. Các khái niệm về Git: Local Repository, Remote Repository, Branch, Commit, Merge, Pull, Push, Clone, Fork.](#2-các-khái-niệm-về-git-local-repository-remote-repository-branch-commit-merge-pull-push-clone-fork)
+    - [2.1. Repository](#21-repository)
+      - [2.1.1. Local Repository](#211-local-repository)
+      - [2.1.2. Remote Repository](#212-remote-repository)
+    - [2.2. Branch](#22-branch)
+    - [2.3. Commit](#23-commit)
+    - [2.4. Merge](#24-merge)
+    - [2.5. Pull](#25-pull)
+    - [2.6. Push](#26-push)
+    - [2.7. Clone](#27-clone)
+    - [2.8. Fork](#28-fork)
+  - [3. Khi nào cần Pull Request? Cách tạo Pull Request](#3-khi-nào-cần-pull-request-cách-tạo-pull-request)
+  - [4. UML là gì? Lí do cần vẽ UML](#4-uml-là-gì-lí-do-cần-vẽ-uml)
+  - [5. Mô hình Class Diagram, Activity Diagram](#5-mô-hình-class-diagram-activity-diagram)
+    - [5.1 Class Diagram](#51-class-diagram)
+    - [5.2. Activity Diagram](#52-activity-diagram)
+
 # DEV THÌ KHÔNG CHỈ VIẾT CODE
 ## 1. Version Control là gì? Tại sao lại phải sử dụng Version Control
 - **`Version Control System (VCS)`** là hệ thống kiểm soát phiên bản, giúp theo dõi và quản lý các thay đổi đối với hệ thống tập tin.
@@ -13,6 +32,8 @@ Một số Version control phổ biến bao gồm **Git, Mercurial, và SVN**. *
 ## 2. Các khái niệm về Git: Local Repository, Remote Repository, Branch, Commit, Merge, Pull, Push, Clone, Fork.
 
 > **Tham Khảo: [GIT](https://topdev.vn/blog/git-la-gi/#_git-la-gi-5)**
+
+> **Thao Khảo: [Git - GitHub • Học Git thực tế để đi làm](https://www.youtube.com/watch?v=swlrBlriFPE)**
 
 - `Git` là một hệ thống quản lý phiên bản phân tán `(Distributed Version Control System – DVCS)`, nó là một trong những hệ thống quản lý phiên bản phân tán phổ biến nhất hiện nay. Git cung cấp cho mỗi lập trình viên kho lưu trữ `(repository)` riêng chứa toàn bộ lịch sử thay đổi.
 
@@ -59,25 +80,81 @@ Là nơi lưu trữ tất cả những thông tin cần thiết để duy trì v
     - ***Branch local:*** là branch lưu ở local (tất nhiên rồi). Nó có thể được liên kết với 1 branch ở remote hoặc không. Hiển thị branch có trên local ta dùng lệnh `git branch`.
     - ***Branch remote:*** là branch lưu ở remote. Branch này có thể `fetch` về local nhưng không tạo thêm branch ở local. Hiểu đơn giản là bạn có thể tải branch ở remote về nhưng không tạo 1 branch ở local với tên tương tự và tất nhiên sẽ không liên kết nó với một branch local nào cả. Để hiển thị branch remote có trên local dùng lệnh `git branch -r`
 
-**Tạo branch**: `$ git branch <branchname>`
+**Tạo branch**: `git branch <branchname>`
+**Xoá một branch ở phía local:** `git branch -D <branch_name>`
+**Xoá một branch ở phía remote:**`git push <remote_name> --delete <branch_name>`
+**Xoá một branch ở phía remote:**`git push <remote_name> --delete <branch_name>`
+**Chuyển nhánh:**`git checkout <branch>` hoặc `git checkout -b <branch name>`(Chuyển nhánh và tạo nhánh `branch name`)
 
-**Xoá một branch ở phía local** 
-**Cách 1:** `$ git branch --delete <branch_name>`
-hoặc `$ git branch -d <branch_name>`
+### 2.3. Commit
 
-**Cách 2:** `$ git branch --delete --force <branch_name>`
-hoặc `$ git branch -D <branch_name>`
+- Lệnh `git commit` trong Git được sử dụng để lưu lại những thay đổi bạn đã thực hiện trong kho lưu trữ (repository). Sau khi bạn đã thực hiện các sửa đổi trong mã nguồn của mình, bạn sẽ muốn "commit" những thay đổi đó để tạo ra một điểm kiểm soát trong lịch sử của dự án.
 
-**Xoá một branch remote lưu ở local**
-`$ git branch --delete --remotes <remote_name>/<branch_name>` 
-hoặc `$ git branch -d -r <remote_name>/<branch_name>`
+- `git commit -m "message"` or `git commit --amend :wq` (những thay đổi sẽ đc gộp vào commit ngay trước đó)
 
->**NOTE
-> - Cách 1 chỉ xóa được branch local khi nó đã được Merge vào branch hiện tại và nó đã được push lên remote nếu nó có liên kết với một branch remote.
-> - Cách 2 sẽ xóa được mọi branch kể cả không thỏa mãn điều kiện kể trên. Chỉ xóa được branch khi đang ở branch khác.
+### 2.4. Merge
 
-**Xoá một branch ở phía remote**
-`$ git push <remote_name> --delete <branch_name>`
+- Lệnh `git merge` trong Git được sử dụng để kết hợp các thay đổi từ một nhánh vào nhánh hiện tại. Quá trình này thường được sử dụng để tích hợp các thay đổi từ một nhánh phụ (thường là một tính năng hoặc một nhánh sửa lỗi) vào nhánh chính.
+
+- Trước khi merge ta phải checkout sang nhánh chính và sử dụng `git merge <branch-name>` hoặc `git merge <branch-name> <merged-branch-name>`
+
+### 2.5. Pull
+- Lệnh `git pull` trong Git được sử dụng để cập nhật mã nguồn từ một kho lưu trữ từ xa (remote repository) và tự động thực hiện lệnh git merge để kết hợp các thay đổi vào nhánh hiện tại.
+
+- `git pull <remote> <branch>`
+
+**Trong đó:**
+
+  - `<remote>` là tên của kho lưu trữ từ xa, thường là "origin" nếu bạn đã clone một dự án.
+  - `<branch>` là tên của nhánh từ xa bạn muốn cập nhật và kết hợp.
+
+### 2.6. Push
+
+- Lệnh `git push` trong Git được sử dụng để đẩy các commit từ máy của bạn lên một kho lưu trữ từ xa (remote repository), cập nhật các nhánh từ xa và chia sẻ công việc của bạn với người khác.
+
+- `git push <remote> <branch>` or `git push <remote> <branch> -f` (fork update lên pull request đã tạo)
+
+**Trong đó:**
+  - `<remote>` là tên của kho lưu trữ từ xa, thường là "origin" nếu bạn đã clone một dự án.
+  - `<branch>` là tên của nhánh cục bộ bạn muốn đẩy lên kho lưu trữ từ xa.
+
+### 2.7. Clone
+
+- Lệnh `git clone` trong Git được sử dụng để sao chép (clone) một kho lưu trữ từ xa (remote repository) vào máy tính của bạn. Quá trình này tạo ra một bản sao đầy đủ của kho lưu trữ đó, bao gồm tất cả lịch sử commit, nhánh, và tất cả các tệp tin cần thiết để bạn có thể bắt đầu làm việc trên dự án đó.
+
+- `git clone <url_kho_luu_tru>`
+
+### 2.8. Fork
+
+- Là hành động tạo một bản sao của repository gốc thành một repository của bạn. Việc fork một repository cho phép bạn dễ dàng chỉnh sửa, thay đổi source code mà không ảnh hưởng tới source gốc.
+
+- Khác vói `clone`, `fork` tạo bảo sao về kho lưu trữ của bạn còn `clone` sẽ tạo bảo sao về `local`
+
+## 3. Khi nào cần Pull Request? Cách tạo Pull Request
+
+- Pull Request là một khái niệm chủ yếu được sử dụng trong các dự án quản lý mã nguồn mở và các hệ thống quản lý mã nguồn phân tán như GitHub, GitLab, và Bitbucket. Mục tiêu của Pull Request là mở ra một diễn đàn để thảo luận về và kiểm tra các thay đổi trước khi chúng được tích hợp vào nhánh chính của dự án.
+
+- Chúng ta tạo Pull Request trước khi muốn `merge` một `branch` nào đó vào `branch` chính để cho mọi người có thể review thay đổi.
+
+- Một số tình huống cần **`pull request:`**
+
+  - **Đóng Góp vào Dự Án Mã Nguồn Mở:** Khi bạn muốn đóng góp vào một dự án mã nguồn mở, bạn tạo một fork của dự án đó, thực hiện các thay đổi trong fork của mình, và sau đó tạo một Pull Request để yêu cầu nhà quản lý dự án tích hợp thay đổi của bạn.
+  - **Kiểm Tra và Phê Duyệt Thay Đổi:** Trong môi trường làm việc nhóm, Pull Request cung cấp một cách để thành viên nhóm kiểm tra và phê duyệt thay đổi của người khác trước khi chúng được kết hợp vào nhánh chính.
+  - **Quản Lý Quy Trình Phát Triển:** Trong các quy trình phát triển như Gitflow, Pull Request được sử dụng để tích hợp các tính năng hoặc sửa lỗi từ nhánh phụ vào nhánh chính.
+
+- Cách tạo Pull Request:
+
+  - **Fork Dự Án:** sao chép dự án mà bạn muốn đóng góp về repo của mình.
+  - **Clone fork về máy:** sử dụng `git clone`
+  - **Tạo nhánh và thực hiện thay đổi:** Tạo một nhánh mới `(git checkout -b feature-branch)` và thực hiện các thay đổi trong nhánh đó.
+  - **Commit và Push Thay Đổi:** Commit các thay đổi `(git commit -m "Your message")` và đẩy chúng lên nhánh của bạn trên fork `(git push origin feature-branch).` tuyệt đối không push thẳng lên repo gốc.
+  - **Tạo Pull Request:** Sang repo chính chọn ![Alt text](image-2.png) sau đó ![Alt text](image-3.png)
+  - **Thảo Luận và Phê Duyệt:** Thành viên nhóm hoặc nhà quản lý dự án sẽ kiểm tra Pull Request, thảo luận và thực hiện các thay đổi (nếu cần).
+    - Khi thay đổi được chấp nhận, nó sẽ được `merge` vào nhánh chính.
+
+>**Trong dự án cá nhân muốn nhanh gọn cứ code + push thẳng cũng được :P**
+
+![Github_roadmap](Github_roadmap.jpg)
 
 ## 4. UML là gì? Lí do cần vẽ UML
 - **UML** (Unified Modeling Language - ngôn ngữ mô hình hóa thống nhất) là một ngôn ngữ mô hình gồm các ký hiệu đồ họa mà các phương pháp hướng đối tượng sử dụng để thiết kế các hệ thống thông tin một cách nhanh chóng.
@@ -109,3 +186,94 @@ hoặc `$ git branch -d -r <remote_name>/<branch_name>`
 ## 5. Mô hình Class Diagram, Activity Diagram
 ### 5.1 Class Diagram
 
+>**Tham Khảo: [Class Diagram](https://vncoder.vn/bai-viet/huong-dan-cach-thiet-ke-so-do-lop-class-diagram-trong-uml)**
+
+- **Class diagram** mô tả kiểu của các đối tượng trong hệ thống và các loại quan hệ khác nhau tồn tại giữa chúng.
+- **Các thành phần cơ bản của Class diagram**
+  - Tên class
+  - Thuộc tính
+  - Phương thức
+  ![Alt text](image-4.png)
+
+- **Access Modifier trong Class Diagram**
+  - Private ( – )
+  - Public ( + )
+  - Protected ( # )
+  - Package/Default
+  ![Alt text](image-5.png)
+
+- **Relationship trong class diagram**
+  - Association: quan hệ giữa hai lớp với nhau, thể hiện chúng có liên quan với nhau.
+  ![Alt text](image-6.png)
+  - Aggregation: Đối tượng tạo từ class A mất thì đối tượng tạo từ class B vẫn tồn tại độc lập.
+  ![Alt text](image-7.png)
+  - Composition: Đối tượng tạo từ lass A mất thì đối tượng tạo từ class B sẽ mất.
+  ![Alt text](image-8.png)
+  - Inheritance: 1 class kế thừa từ 1 class khác.
+  ![Alt text](image-9.png)
+
+>**Ví dụ**
+![Alt text](image-10.png)
+
+- **Multiplicity trong Class Diagram**
+  Sử dụng để thể hiện quan hệ về số lượng giữa các đối tượng được tạo từ các class trong class diagram.
+  - 0…1: 0 hoặc 1
+  - n : Bắt buộc có n
+  - 0…* : 0 hoặc nhiều
+  - 1…* : 1 hoặc nhiều
+  - m…n: có tối thiểu là m và tối đa là n
+  ![Alt text](image-11.png)
+
+### 5.2. Activity Diagram
+
+>**Tham Khảo: [Activity Diagram](https://magz.techover.io/2021/08/25/tong-quan-ve-activity-diagram/)**
+
+
+- **Activity Diagram** là một mô hình logic dùng để mô hình hóa các hoạt động trong một quy trình nghiệp vụ, giúp developer, tester hay chính bản thân BA dễ dàng nắm được các hướng đi của hệ thống.
+- **Activity diagram** là sơ đồ luồng xử lí của hệ thống, bao gồm luồng đi của dòng dữ liệu, dòng sự kiện. Mô tả các hoạt động trong một chức năng của hệ thống – luồng xử lý của một use case. 
+- **Các thành phần của Activity Diagram:**
+  - **Start** 
+  ![Alt text](image-12.png)
+    - Khởi tạo một hoạt động.
+    - Một activity diagram có thể có nhiều trạng thái Start.
+  - **Transition**
+  ![Alt text](image-13.png)
+    - Mô tả sự chuyển đổi trạng thái của các hoạt động
+  - **Activity**
+  ![Alt text](image-14.png)
+    -  Mô tả hành vi của đối tượng trong quy trình
+    - Tên hoạt động phải ngắn gọn, đủ nghĩa. Nên đặt là động từ và mô tả đầy đủ ý nghĩa tổng thể của hoạt động nhất có thể.
+  - **Decision**
+  ![Alt text](image-15.png)
+    - Đây là kí hiệu biểu thị nút điều kiện chuyển hướng. Tùy theo trường hợp đúng hay sai của kết quả mà có hướng di chuyển tiếp theo tương ứng.
+    - Decision bao gồm hai loại sau: `Branch` và `Merge`
+  - **Branch**
+  ![Alt text](image-16.png)
+    - Mô tả điều kiện rẽ nhánh
+    - Chỉ một dòng điều khiển đi vào
+    - Hai hoặc nhiều dòng điều khiển đi ra
+    - Chỉ một dòng điều khiển dẫn đến kết quả
+    - Mỗi dòng chứa một điều kiện (guard), guard phải liên quan đến điều kiện và loại trừ nhau
+  - **Merge**
+  ![Alt text](image-17.png)
+    - Có hai hoặc nhiều dòng điều khiển đi vào
+    - Chỉ một dòng điều khiển đi ra
+  - **Synchronization bar**
+  ![Alt text](image-18.png)
+    - Khi có các trường hợp cần hội tụ đủ nhiều luồng điều khiển một lúc để gộp thành một luồng xử lí thì cần dùng `JOIN.`
+    - Khi cần phải tách một luồng điều khiển ra hai hoặc nhiều luồng khác biệt nhau thì cần dùng `FORK`. Mỗi luồng của `FORK` hoàn toàn không lệ thuộc nhau.
+  - **Join**
+  ![Alt text](image-19.png)
+    - Kết hợp các dòng điều khiển song song (FORK)
+    - Có hai hoặc nhiều dòng điều khiển vào
+    - Chỉ có một dòng điều khiển ra, dòng điều khiển ra được tạo khi tất cả các dòng cần thiết đã vào
+  - **Fork**
+  ![Alt text](image-20.png)
+    - Mô tả một dòng điều khiển được tách ra thực hiện song song
+    - Chỉ có một dòng điều khiển đi vào
+    - Có hai hoặc nhiều dòng điều khiển đi ra
+    - Dùng FORK khi các hoạt động thực hiện không quan tâm thứ tự
+  - **End**
+  ![Alt text](image-21.png)  
+    - Mô tả trạng thái kết thúc quy trình
+    - Một activity diagram có thể có một hoặc nhiều trạng thái kết thúc
