@@ -576,4 +576,3 @@ Student [id=4, name=Nguyen Van D, age=27, gpa=6.0]
 | Phải implements giao tiếp Comparable cho lớp đối tượng cần được so sánh.               | Không phải implements giao tiếp Comparator cho lớp đối tượng cần được so sánh.                     |
 | Comparable cung cấp phương thức compareTo() để sắp xếp các phần tử.                    | Comparator cung cấp phương thức compare() để sắp xếp các phần tử.                                  |
 | Có thể sắp xếp các phần tử của kiểu Comparable bởi phương thức Collections.sort(List). | Có thể sắp xếp các phần tử của kiểu Comparator bởi phương thức Collections.sort(List, Comparator). |
-
