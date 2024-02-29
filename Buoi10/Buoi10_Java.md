@@ -1,3 +1,16 @@
+- [NHẬP XUẤT FILE, UNIT TEST](#nhập-xuất-file-unit-test)
+  - [FILE TRONG JAVA](#file-trong-java)
+    - [Các phương thức làm việc với tệp và thư mục](#các-phương-thức-làm-việc-với-tệp-và-thư-mục)
+    - [Byte Stream](#byte-stream)
+      - [Lớp OutputStream](#lớp-outputstream)
+      - [Lớp InputStream](#lớp-inputstream)
+    - [Character Streams](#character-streams)
+  - [Assertion](#assertion)
+    - [Ưu điểm](#ưu-điểm)
+  - [Unit Test](#unit-test)
+    - [Một số khái niệm thường thấy](#một-số-khái-niệm-thường-thấy)
+  - [Tầm quan trọng của viết Unit Test](#tầm-quan-trọng-của-viết-unit-test)
+
 # NHẬP XUẤT FILE, UNIT TEST
 ## FILE TRONG JAVA
 - Trong lập trình Java, có các đối tượng file dùng để thao tác đọc, mở đóng file. Chúng ta có thể lưu trữ giá trị của người dùng vào file. Sau đó chương trình sẽ đọc các file đó và hiển thị cho người dùng.
