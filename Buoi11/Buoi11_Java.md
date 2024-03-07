@@ -1,3 +1,12 @@
+- [CÁC NGUYÊN TẮC THIẾT KẾ, MÔ HÌNH THIẾT KẾ](#các-nguyên-tắc-thiết-kế-mô-hình-thiết-kế)
+  - [SOLID là gì?](#solid-là-gì)
+    - [Single responsibility priciple](#single-responsibility-priciple)
+    - [Open/Closed principle](#openclosed-principle)
+    - [Liskov substitution principle](#liskov-substitution-principle)
+  - [KISS, DRY, YAGNI](#kiss-dry-yagni)
+  - [Mô hình MVC](#mô-hình-mvc)
+    - [Luồng xử lý trong MVC](#luồng-xử-lý-trong-mvc)
+
 # CÁC NGUYÊN TẮC THIẾT KẾ, MÔ HÌNH THIẾT KẾ
 - Hầu hết lập trình viên đều đã biết các tính chất của OOP, nhưng cách thức để phối hợp các tính chất này với nhau để tăng hiệu quả của ứng dụng thì không phải ai cũng nắm được. Một trong những chỉ dẫn để giúp chúng ta sử dụng được OOP hiệu quả hơn đó là nguyên tắc SOLID.
 
